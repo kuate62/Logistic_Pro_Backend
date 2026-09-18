@@ -1,0 +1,4 @@
+body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; text-align: center; }
+.container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+.code { font-size: 24px; font-weight: bold; color: #dc3545; padding: 10px; background: #fdecea; border-radius: 5px; display: inline-block; }
+.footer { margin-top: 20px; font-size: 12px; color: #666; }

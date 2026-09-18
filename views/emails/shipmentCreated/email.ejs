@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expédition créée</title>
+</head>
+<body>
+<div class="container">
+    <h2>Expédition créée avec succès</h2>
+    <p>Votre expédition <strong><%= reference %></strong> a bien été enregistrée.</p>
+    <p>Colis : <strong><%= trackingNumber %></strong></p>
+    <p>Trajet : <%= origin %> → <%= destination %></p>
+    <p>Montant : <%= totalAmount %> FC</p>
+    <p class="footer">Vous pouvez suivre votre colis avec le numéro de suivi ci-dessus.</p>
+</div>
+</body>
+</html>

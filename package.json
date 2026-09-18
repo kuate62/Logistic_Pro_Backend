@@ -1,0 +1,37 @@
+{
+  "name": "projetbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "migration": "node config/migration.js",
+    "seed": "node config/seed.js",
+    "test_mail": "node config/testSendMail.js",
+    "generate_secret:dev": "node config/generate_secret.js dev",
+    "generate_secret:prod": "node config/generate_secret.js prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "helmet": "^8.3.0",
+    "joi": "^18.2.3",
+    "jsonwebtoken": "^9.0.3",
+    "juice": "^12.1.1",
+    "maildev": "^3.0.0-rc.1",
+    "multer": "^2.2.0",
+    "mysql2": "^3.23.2",
+    "nodemailer": "^9.0.3",
+    "sequelize": "^6.37.8"
+  }
+}
