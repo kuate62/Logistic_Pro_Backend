@@ -38,10 +38,7 @@ const allowedOrigins = (process.env.CORS_ORIGINS ?? 'http://localhost:5173')
     .split(',')
     .map(o => o.trim())
     .filter(Boolean);
-// 1 ère méthode
-server.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
 
-// 2 ème méthode
 server.use(cors({
     origin: (origin, callback) => {
         // Allow requests with no origin (mobile apps, curl, Postman)
