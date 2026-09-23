@@ -1,3 +1,3 @@
-import {isGrantedAccess} from "./auth.js";
+import { isGrantedAccess } from "./auth.js";
 
 export const authorize = (...rolesAuthorized) => isGrantedAccess(rolesAuthorized);

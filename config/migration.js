@@ -20,12 +20,13 @@ const models = [
 ];
 
 try {
-    for (const model of models) {
-        await model.sync({ alter: true });
-    }
+    await sequelize.query('SET FOREIGN_KEY_CHECKS = 0;');
+    await sequelize.sync({ alter: true });
+    await sequelize.query('SET FOREIGN_KEY_CHECKS = 1;');
     console.log('✅ Database migration completed successfully.');
     process.exit(0);
 } catch (error) {
+    await sequelize.query('SET FOREIGN_KEY_CHECKS = 1;').catch(() => {});
     console.error('❌ Database migration failed:', error);
     process.exit(1);
 }

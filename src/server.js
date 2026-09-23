@@ -44,8 +44,19 @@ server.use(cors({
     origin: (origin, callback) => {
         // Allow requests with no origin (mobile apps, curl, Postman)
         if (!origin) return callback(null, true);
-        if (allowedOrigins.includes(origin)) return callback(null, true);
-        callback(new Error(`CORS: origin '${origin}' not allowed`));
+        if (allowedOrigins.includes(origin) || allowedOrigins.includes('*')) return callback(null, true);
+
+        try {
+            const url = new URL(origin);
+            // Allow any *.vercel.app deployment or localhost
+            if (url.hostname.endsWith('.vercel.app') || url.hostname === 'localhost' || url.hostname === '127.0.0.1') {
+                return callback(null, true);
+            }
+        } catch {
+            // Invalid origin format
+        }
+
+        callback(null, false);
     },
     credentials: true
 }));
